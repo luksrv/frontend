@@ -1,16 +1,23 @@
+import tailwindcss from '@tailwindcss/postcss'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-    purge: [
-      './pages/**/*.{js,ts,jsx,tsx}',
-      './components/**/*.{js,ts,jsx,tsx}',
-    ],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-      extend: {},
+export default {
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#3B82F6',
+          dark: '#2563EB',
+        }
+      }
     },
-    variants: {
-      extend: {},
-    },
-    plugins: [],
+  },
+  plugins: [],
+  corePlugins: {
+    preflight: true, // Habilitado por padrão na v4
   }
-  
+}
